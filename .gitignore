@@ -28,3 +28,4 @@ checkpoint-*/
 .DS_Store
 *.swp
 token.txt
+training_output/
