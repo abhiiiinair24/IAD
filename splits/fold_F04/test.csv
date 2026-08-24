@@ -1,0 +1,431 @@
+speaker,session,utt_id,wav_path,transcript,duration_sec,mic,status
+F04,Session1,0005,../F04/Session1/wav_arrayMic/0005.wav,fee,2.85,arrayMic,ok
+F04,Session1,0006,../F04/Session1/wav_arrayMic/0006.wav,yet he still thinks as swiftly as ever.,3.15,arrayMic,ok
+F04,Session1,0007,../F04/Session1/wav_arrayMic/0007.wav,sheet,0.9,arrayMic,ok
+F04,Session1,0008,../F04/Session1/wav_arrayMic/0008.wav,knew,1.35,arrayMic,ok
+F04,Session1,0009,../F04/Session1/wav_arrayMic/0009.wav,left,1.35,arrayMic,ok
+F04,Session1,0010,../F04/Session1/wav_arrayMic/0010.wav,air,1.2,arrayMic,ok
+F04,Session1,0011,../F04/Session1/wav_arrayMic/0011.wav,torn,1.35,arrayMic,ok
+F04,Session1,0012,../F04/Session1/wav_arrayMic/0012.wav,born,1.65,arrayMic,ok
+F04,Session1,0013,../F04/Session1/wav_arrayMic/0013.wav,trait,1.95,arrayMic,ok
+F04,Session1,0014,../F04/Session1/wav_arrayMic/0014.wav,stubble,1.95,arrayMic,ok
+F04,Session1,0015,../F04/Session1/wav_arrayMic/0015.wav,You wished to know all about my grandfather.,4.35,arrayMic,ok
+F04,Session1,0016,../F04/Session1/wav_arrayMic/0016.wav,chair,1.05,arrayMic,ok
+F04,Session1,0017,../F04/Session1/wav_arrayMic/0017.wav,sticks,1.65,arrayMic,ok
+F04,Session1,0018,../F04/Session1/wav_arrayMic/0018.wav,storm,1.35,arrayMic,ok
+F04,Session1,0019,../F04/Session1/wav_arrayMic/0019.wav,rage,1.5,arrayMic,ok
+F04,Session1,0020,../F04/Session1/wav_arrayMic/0020.wav,trace,1.35,arrayMic,ok
+F04,Session1,0021,../F04/Session1/wav_arrayMic/0021.wav,go,1.35,arrayMic,ok
+F04,Session1,0022,../F04/Session1/wav_arrayMic/0022.wav,beat,1.5,arrayMic,ok
+F04,Session1,0023,../F04/Session1/wav_arrayMic/0023.wav,hair,1.05,arrayMic,ok
+F04,Session1,0024,../F04/Session1/wav_arrayMic/0024.wav,jacket,1.95,arrayMic,ok
+F04,Session1,0025,../F04/Session1/wav_arrayMic/0025.wav,he dressed himself in an ancient black frock coat,4.5,arrayMic,ok
+F04,Session1,0026,../F04/Session1/wav_arrayMic/0026.wav,swarm,1.95,arrayMic,ok
+F04,Session1,0027,../F04/Session1/wav_arrayMic/0027.wav,usually minus several buttons;,4.65,arrayMic,ok
+F04,Session1,0028,../F04/Session1/wav_arrayMic/0028.wav,store,1.05,arrayMic,ok
+F04,Session1,0029,../F04/Session1/wav_arrayMic/0029.wav,knew,1.35,arrayMic,ok
+F04,Session1,0030,../F04/Session1/wav_arrayMic/0030.wav,chair,0.9,arrayMic,ok
+F04,Session1,0031,../F04/Session1/wav_arrayMic/0031.wav,chair,1.95,arrayMic,ok
+F04,Session1,0032,../F04/Session1/wav_arrayMic/0032.wav,no,1.5,arrayMic,ok
+F04,Session1,0033,../F04/Session1/wav_arrayMic/0033.wav,spark,1.5,arrayMic,ok
+F04,Session1,0034,../F04/Session1/wav_arrayMic/0034.wav,Grandfather likes to be modern in his language.,5.4,arrayMic,ok
+F04,Session1,0035,../F04/Session1/wav_arrayMic/0035.wav,tip,1.95,arrayMic,ok
+F04,Session1,0036,../F04/Session1/wav_arrayMic/0036.wav,dug,0.9,arrayMic,ok
+F04,Session1,0037,../F04/Session1/wav_arrayMic/0037.wav,weed,1.5,arrayMic,ok
+F04,Session1,0038,../F04/Session1/wav_arrayMic/0038.wav,She had your dark suit in greasy wash water all year.,5.85,arrayMic,ok
+F04,Session1,0039,../F04/Session1/wav_arrayMic/0039.wav,grow,1.2,arrayMic,ok
+F04,Session1,0040,../F04/Session1/wav_arrayMic/0040.wav,two,0.9,arrayMic,ok
+F04,Session1,0041,../F04/Session1/wav_arrayMic/0041.wav,two,1.35,arrayMic,ok
+F04,Session1,0042,../F04/Session1/wav_arrayMic/0042.wav,Don't ask me to carry an oily rag like that.,4.65,arrayMic,ok
+F04,Session1,0043,../F04/Session1/wav_arrayMic/0043.wav,"but he always answers, ""Banana oil!""",4.5,arrayMic,ok
+F04,Session1,0044,../F04/Session1/wav_arrayMic/0044.wav,air,1.35,arrayMic,ok
+F04,Session1,0045,../F04/Session1/wav_arrayMic/0045.wav,rake,1.2,arrayMic,ok
+F04,Session1,0046,../F04/Session1/wav_arrayMic/0046.wav,"Well, he is nearly ninety-three years old;",4.65,arrayMic,ok
+F04,Session1,0047,../F04/Session1/wav_arrayMic/0047.wav,glow,1.8,arrayMic,ok
+F04,Session1,0048,../F04/Session1/wav_arrayMic/0048.wav,knee,1.2,arrayMic,ok
+F04,Session1,0051,../F04/Session1/wav_arrayMic/0051.wav,park,1.65,arrayMic,ok
+F04,Session1,0052,../F04/Session1/wav_arrayMic/0052.wav,horn,1.35,arrayMic,ok
+F04,Session1,0053,../F04/Session1/wav_arrayMic/0053.wav,storm,0.9,arrayMic,ok
+F04,Session1,0054,../F04/Session1/wav_arrayMic/0054.wav,goat,1.35,arrayMic,ok
+F04,Session1,0055,../F04/Session1/wav_arrayMic/0055.wav,dark,1.35,arrayMic,ok
+F04,Session1,0056,../F04/Session1/wav_arrayMic/0056.wav,bit,1.5,arrayMic,ok
+F04,Session1,0057,../F04/Session1/wav_arrayMic/0057.wav,the,1.2,arrayMic,ok
+F04,Session1,0058,../F04/Session1/wav_arrayMic/0058.wav,gadget,2.1,arrayMic,ok
+F04,Session1,0059,../F04/Session1/wav_arrayMic/0059.wav,race,1.95,arrayMic,ok
+F04,Session1,0060,../F04/Session1/wav_arrayMic/0060.wav,raid,1.8,arrayMic,ok
+F04,Session1,0061,../F04/Session1/wav_arrayMic/0061.wav,he slowly takes a short walk in the open air each day.,5.25,arrayMic,ok
+F04,Session1,0062,../F04/Session1/wav_arrayMic/0062.wav,yes,1.95,arrayMic,ok
+F04,Session1,0063,../F04/Session1/wav_arrayMic/0063.wav,giving those who observe him a pronounced feeling of the utmost respect.,6.3,arrayMic,ok
+F04,Session1,0064,../F04/Session1/wav_arrayMic/0064.wav,fair,1.65,arrayMic,ok
+F04,Session1,0065,../F04/Session1/wav_arrayMic/0065.wav,The quick brown fox jumps over the lazy dog.,5.25,arrayMic,ok
+F04,Session1,0066,../F04/Session1/wav_arrayMic/0066.wav,"read [as in ""I can read""]",1.65,arrayMic,ok
+F04,Session1,0067,../F04/Session1/wav_arrayMic/0067.wav,Twice each day he plays skillfully and with zest upon our small organ.,7.05,arrayMic,ok
+F04,Session1,0068,../F04/Session1/wav_arrayMic/0068.wav,warm,1.35,arrayMic,ok
+F04,Session1,0070,../F04/Session1/wav_arrayMic/0070.wav,feed,1.95,arrayMic,ok
+F04,Session1,0072,../F04/Session1/wav_arrayMic/0072.wav,bug,1.35,arrayMic,ok
+F04,Session1,0073,../F04/Session1/wav_arrayMic/0073.wav,swarm,1.95,arrayMic,ok
+F04,Session1,0074,../F04/Session1/wav_arrayMic/0074.wav,range,1.5,arrayMic,ok
+F04,Session1,0075,../F04/Session1/wav_arrayMic/0075.wav,floor,0.9,arrayMic,ok
+F04,Session1,0076,../F04/Session1/wav_arrayMic/0076.wav,jagged,1.65,arrayMic,ok
+F04,Session1,0078,../F04/Session1/wav_arrayMic/0078.wav,rate,1.8,arrayMic,ok
+F04,Session1,0079,../F04/Session1/wav_arrayMic/0079.wav,"read [as in ""I can read""]",1.2,arrayMic,ok
+F04,Session1,0080,../F04/Session1/wav_arrayMic/0080.wav,trouble,1.35,arrayMic,ok
+F04,Session1,0081,../F04/Session1/wav_arrayMic/0081.wav,rain,1.2,arrayMic,ok
+F04,Session1,0082,../F04/Session1/wav_arrayMic/0082.wav,corn,1.5,arrayMic,ok
+F04,Session1,0083,../F04/Session1/wav_arrayMic/0083.wav,right,1.35,arrayMic,ok
+F04,Session1,0084,../F04/Session1/wav_arrayMic/0084.wav,know,1.35,arrayMic,ok
+F04,Session1,0085,../F04/Session1/wav_arrayMic/0085.wav,feet,1.8,arrayMic,ok
+F04,Session1,0086,../F04/Session1/wav_arrayMic/0086.wav,beta,2.4,arrayMic,ok
+F04,Session1,0087,../F04/Session1/wav_arrayMic/0087.wav,beta,1.65,arrayMic,ok
+F04,Session1,0089,../F04/Session1/wav_arrayMic/0089.wav,double,1.35,arrayMic,ok
+F04,Session1,0090,../F04/Session1/wav_arrayMic/0090.wav,rave,1.95,arrayMic,ok
+F04,Session1,0091,../F04/Session1/wav_arrayMic/0091.wav,"Except in the winter when the ooze or snow or ice prevents,",7.05,arrayMic,ok
+F04,Session1,0092,../F04/Session1/wav_arrayMic/0092.wav,"Except in the winter when the ooze or snow or ice prevents,",6.15,arrayMic,ok
+F04,Session1,0093,../F04/Session1/wav_arrayMic/0093.wav,trade,1.8,arrayMic,ok
+F04,Session1,0094,../F04/Session1/wav_arrayMic/0094.wav,alpha,1.5,arrayMic,ok
+F04,Session1,0095,../F04/Session1/wav_arrayMic/0095.wav,bubble,1.5,arrayMic,ok
+F04,Session1,0096,../F04/Session1/wav_arrayMic/0096.wav,ship,1.95,arrayMic,ok
+F04,Session1,0097,../F04/Session1/wav_arrayMic/0097.wav,form,1.65,arrayMic,ok
+F04,Session1,0098,../F04/Session1/wav_arrayMic/0098.wav,for,1.65,arrayMic,ok
+F04,Session1,0099,../F04/Session1/wav_arrayMic/0099.wav,share,1.2,arrayMic,ok
+F04,Session1,0100,../F04/Session1/wav_arrayMic/0100.wav,"When he speaks, his voice is just a bit cracked and quivers a trifle.",6.3,arrayMic,ok
+F04,Session1,0101,../F04/Session1/wav_arrayMic/0101.wav,train,1.8,arrayMic,ok
+F04,Session1,0102,../F04/Session1/wav_arrayMic/0102.wav,feed,2.25,arrayMic,ok
+F04,Session1,0103,../F04/Session1/wav_arrayMic/0103.wav,sip,1.8,arrayMic,ok
+F04,Session1,0104,../F04/Session1/wav_arrayMic/0104.wav,pat,1.8,arrayMic,ok
+F04,Session1,0105,../F04/Session1/wav_arrayMic/0105.wav,"tear [as in ""tear up that paper""]",0.75,arrayMic,ok
+F04,Session1,0106,../F04/Session1/wav_arrayMic/0106.wav,"tear [as in ""tear up that paper""]",1.65,arrayMic,ok
+F04,Session1,0107,../F04/Session1/wav_arrayMic/0107.wav,stick,2.55,arrayMic,ok
+F04,Session1,0108,../F04/Session1/wav_arrayMic/0108.wav,"lead [as in ""I will lead you""]",2.1,arrayMic,ok
+F04,Session1,0109,../F04/Session1/wav_arrayMic/0109.wav,car,1.65,arrayMic,ok
+F04,Session1,0110,../F04/Session1/wav_arrayMic/0110.wav,warm,1.05,arrayMic,ok
+F04,Session1,0111,../F04/Session1/wav_arrayMic/0111.wav,beat,1.65,arrayMic,ok
+F04,Session1,0112,../F04/Session1/wav_arrayMic/0112.wav,"We have often urged him to walk more and smoke less,",5.1,arrayMic,ok
+F04,Session1,0113,../F04/Session1/wav_arrayMic/0113.wav,slip,1.95,arrayMic,ok
+F04,Session1,0114,../F04/Session1/wav_arrayMic/0114.wav,one,1.8,arrayMic,ok
+F04,Session1,0115,../F04/Session1/wav_arrayMic/0115.wav,sip,1.8,arrayMic,ok
+F04,Session1,0116,../F04/Session1/wav_arrayMic/0116.wav,sip,2.55,arrayMic,ok
+F04,Session1,0117,../F04/Session1/wav_arrayMic/0117.wav,swore,1.8,arrayMic,ok
+F04,Session1,0118,../F04/Session1/wav_arrayMic/0118.wav,feet,1.95,arrayMic,ok
+F04,Session1,0120,../F04/Session1/wav_arrayMic/0120.wav,"A long, flowing beard clings to his chin,",6.75,arrayMic,ok
+F04,Session1,0121,../F04/Session1/wav_arrayMic/0121.wav,down,3.15,arrayMic,ok
+F04,Session1,0122,../F04/Session1/wav_arrayMic/0122.wav,dagger,2.1,arrayMic,ok
+F04,Session1,0123,../F04/Session1/wav_arrayMic/0123.wav,meat,2.25,arrayMic,ok
+F04,Session1,0124,../F04/Session1/wav_arrayMic/0124.wav,farm,1.2,arrayMic,ok
+F04,Session1,0125,../F04/Session1/wav_arrayMic/0125.wav,bat,1.5,arrayMic,ok
+F04,Session1,0126,../F04/Session1/wav_arrayMic/0126.wav,up,1.35,arrayMic,ok
+F04,Session1,0127,../F04/Session1/wav_arrayMic/0127.wav,knew,1.95,arrayMic,ok
+F04,Session1,0128,../F04/Session1/wav_arrayMic/0128.wav,sleep,1.5,arrayMic,ok
+F04,Session1,0129,../F04/Session1/wav_arrayMic/0129.wav,pile,1.65,arrayMic,ok
+F04,Session1,0130,../F04/Session1/wav_arrayMic/0130.wav,You'd be better off taking a cold shower.,4.05,arrayMic,ok
+F04,Session1,0131,../F04/Session1/wav_arrayMic/0131.wav,You'd be better off taking a cold shower.,4.05,arrayMic,ok
+F04,Session1,0132,../F04/Session1/wav_arrayMic/0132.wav,sway,1.35,arrayMic,ok
+F04,Session1,0133,../F04/Session1/wav_arrayMic/0133.wav,Both figures would go higher in later years.,3.75,arrayMic,ok
+F04,Session1,0134,../F04/Session1/wav_arrayMic/0134.wav,charlie,1.65,arrayMic,ok
+F04,Session1,0135,../F04/Session1/wav_arrayMic/0135.wav,mut,1.65,arrayMic,ok
+F04,Session1,0136,../F04/Session1/wav_arrayMic/0136.wav,troop,1.35,arrayMic,ok
+F04,Session1,0137,../F04/Session1/wav_arrayMic/0137.wav,here,1.2,arrayMic,ok
+F04,Session1,0138,../F04/Session1/wav_arrayMic/0138.wav,wish,1.35,arrayMic,ok
+F04,Session1,0140,../F04/Session1/wav_arrayMic/0140.wav,ate,1.35,arrayMic,ok
+F04,Session1,0141,../F04/Session1/wav_arrayMic/0141.wav,hear,0.9,arrayMic,ok
+F04,Session1,0142,../F04/Session1/wav_arrayMic/0142.wav,pot,1.2,arrayMic,ok
+F04,Session1,0143,../F04/Session1/wav_arrayMic/0143.wav,slip,0.6,arrayMic,ok
+F04,Session1,0144,../F04/Session1/wav_arrayMic/0144.wav,slip,1.5,arrayMic,ok
+F04,Session1,0145,../F04/Session1/wav_arrayMic/0145.wav,slip,3.75,arrayMic,ok
+F04,Session1,0146,../F04/Session1/wav_arrayMic/0146.wav,white,1.5,arrayMic,ok
+F04,Session1,0147,../F04/Session1/wav_arrayMic/0147.wav,Mother sews yellow gingham aprons.,5.25,arrayMic,ok
+F04,Session1,0148,../F04/Session1/wav_arrayMic/0148.wav,I just try to do my best.,4.35,arrayMic,ok
+F04,Session1,0149,../F04/Session1/wav_arrayMic/0149.wav,bad,1.95,arrayMic,ok
+F04,Session1,0150,../F04/Session1/wav_arrayMic/0150.wav,Where were you while we were away?,3.6,arrayMic,ok
+F04,Session1,0151,../F04/Session1/wav_arrayMic/0151.wav,deer,1.65,arrayMic,ok
+F04,Session1,0152,../F04/Session1/wav_arrayMic/0152.wav,droop,1.35,arrayMic,ok
+F04,Session1,0153,../F04/Session1/wav_arrayMic/0153.wav,group,1.5,arrayMic,ok
+F04,Session1,0154,../F04/Session1/wav_arrayMic/0154.wav,bad,1.5,arrayMic,ok
+F04,Session1,0155,../F04/Session1/wav_arrayMic/0155.wav,near,1.5,arrayMic,ok
+F04,Session1,0156,../F04/Session1/wav_arrayMic/0156.wav,cheer,1.8,arrayMic,ok
+F04,Session1,0157,../F04/Session1/wav_arrayMic/0157.wav,thigh,2.4,arrayMic,ok
+F04,Session1,0158,../F04/Session1/wav_arrayMic/0158.wav,single,1.05,arrayMic,ok
+F04,Session1,0159,../F04/Session1/wav_arrayMic/0159.wav,"If you destroy confidence in banks, you do something to the economy, he said.",7.65,arrayMic,ok
+F04,Session1,0160,../F04/Session1/wav_arrayMic/0160.wav,bat,2.85,arrayMic,ok
+F04,Session1,0161,../F04/Session1/wav_arrayMic/0161.wav,"tear [as in ""tear in my eye""]",1.35,arrayMic,ok
+F04,Session1,0162,../F04/Session1/wav_arrayMic/0162.wav,coupe,1.95,arrayMic,ok
+F04,Session1,0163,../F04/Session1/wav_arrayMic/0163.wav,write,1.2,arrayMic,ok
+F04,Session1,0164,../F04/Session1/wav_arrayMic/0164.wav,The train approached the depot slowly.,3.3,arrayMic,ok
+F04,Session1,0165,../F04/Session1/wav_arrayMic/0165.wav,no,1.95,arrayMic,ok
+F04,Session1,0166,../F04/Session1/wav_arrayMic/0166.wav,The islands are sparsely populated.,3.45,arrayMic,ok
+F04,Session1,0167,../F04/Session1/wav_arrayMic/0167.wav,area,1.95,arrayMic,ok
+F04,Session1,0168,../F04/Session1/wav_arrayMic/0168.wav,steer,1.8,arrayMic,ok
+F04,Session1,0169,../F04/Session1/wav_arrayMic/0169.wav,tile,1.65,arrayMic,ok
+F04,Session1,0170,../F04/Session1/wav_arrayMic/0170.wav,select,1.65,arrayMic,ok
+F04,Session1,0171,../F04/Session1/wav_arrayMic/0171.wav,sweet,2.1,arrayMic,ok
+F04,Session1,0172,../F04/Session1/wav_arrayMic/0172.wav,suit,1.5,arrayMic,ok
+F04,Session1,0173,../F04/Session1/wav_arrayMic/0173.wav,of,1.2,arrayMic,ok
+F04,Session1,0174,../F04/Session1/wav_arrayMic/0174.wav,You're used to being on the field.,3.9,arrayMic,ok
+F04,Session1,0175,../F04/Session1/wav_arrayMic/0175.wav,forward,1.95,arrayMic,ok
+F04,Session1,0176,../F04/Session1/wav_arrayMic/0176.wav,root,1.65,arrayMic,ok
+F04,Session1,0177,../F04/Session1/wav_arrayMic/0177.wav,My sister made the flowered curtains.,4.05,arrayMic,ok
+F04,Session1,0178,../F04/Session1/wav_arrayMic/0178.wav,three,1.35,arrayMic,ok
+F04,Session1,0179,../F04/Session1/wav_arrayMic/0179.wav,pat,1.05,arrayMic,ok
+F04,Session1,0180,../F04/Session1/wav_arrayMic/0180.wav,Bright sunshine shimmers on the ocean.,3.45,arrayMic,ok
+F04,Session1,0181,../F04/Session1/wav_arrayMic/0181.wav,ate,1.5,arrayMic,ok
+F04,Session1,0182,../F04/Session1/wav_arrayMic/0182.wav,pay,1.5,arrayMic,ok
+F04,Session1,0183,../F04/Session1/wav_arrayMic/0183.wav,light,1.65,arrayMic,ok
+F04,Session1,0184,../F04/Session1/wav_arrayMic/0184.wav,Two other cases also were under advisement.,7.05,arrayMic,ok
+F04,Session1,0185,../F04/Session1/wav_arrayMic/0185.wav,much,1.5,arrayMic,ok
+F04,Session1,0186,../F04/Session1/wav_arrayMic/0186.wav,hate,1.2,arrayMic,ok
+F04,Session1,0187,../F04/Session1/wav_arrayMic/0187.wav,whoop,1.8,arrayMic,ok
+F04,Session1,0188,../F04/Session1/wav_arrayMic/0188.wav,whoop,1.95,arrayMic,ok
+F04,Session1,0189,../F04/Session1/wav_arrayMic/0189.wav,know,1.5,arrayMic,ok
+F04,Session1,0190,../F04/Session1/wav_arrayMic/0190.wav,rock,1.35,arrayMic,ok
+F04,Session1,0191,../F04/Session1/wav_arrayMic/0191.wav,Why yell or worry over silly items?,3.75,arrayMic,ok
+F04,Session1,0192,../F04/Session1/wav_arrayMic/0192.wav,toot,2.55,arrayMic,ok
+F04,Session1,0193,../F04/Session1/wav_arrayMic/0193.wav,knot,1.05,arrayMic,ok
+F04,Session1,0194,../F04/Session1/wav_arrayMic/0194.wav,fate,1.05,arrayMic,ok
+F04,Session1,0195,../F04/Session1/wav_arrayMic/0195.wav,were,1.35,arrayMic,ok
+F04,Session1,0196,../F04/Session1/wav_arrayMic/0196.wav,we're,2.55,arrayMic,ok
+F04,Session1,0198,../F04/Session1/wav_arrayMic/0198.wav,Just one side got wet.,3.45,arrayMic,ok
+F04,Session1,0199,../F04/Session1/wav_arrayMic/0199.wav,air,1.8,arrayMic,ok
+F04,Session2,0001,../F04/Session2/wav_headMic/0001.wav,shoot,2.555,headMic,ok
+F04,Session2,0002,../F04/Session2/wav_headMic/0002.wav,I looked up and noticed two old men.,5.07,headMic,ok
+F04,Session2,0003,../F04/Session2/wav_headMic/0003.wav,slay,1.775,headMic,ok
+F04,Session2,0004,../F04/Session2/wav_headMic/0004.wav,Will Robin wear a yellow lily?,4.76,headMic,ok
+F04,Session2,0005,../F04/Session2/wav_headMic/0005.wav,I was conscious all the time.,3.645,headMic,ok
+F04,Session2,0006,../F04/Session2/wav_headMic/0006.wav,prior,1.74,headMic,ok
+F04,Session2,0007,../F04/Session2/wav_headMic/0007.wav,play,1.75,headMic,ok
+F04,Session2,0008,../F04/Session2/wav_headMic/0008.wav,briar,3.285,headMic,ok
+F04,Session2,0009,../F04/Session2/wav_headMic/0009.wav,He will allow a rare lily...rare lie[D[D[D[D[D[D[D[D[D[C[C[C[C[C[C[C[C[C[C[C,5.2651,headMic,ok
+F04,Session2,0010,../F04/Session2/wav_headMic/0010.wav,shear,2.31,headMic,ok
+F04,Session2,0011,../F04/Session2/wav_headMic/0011.wav,suit,2.825,headMic,ok
+F04,Session2,0013,../F04/Session2/wav_headMic/0013.wav,All the big baseball players get traded.,4.54,headMic,ok
+F04,Session2,0014,../F04/Session2/wav_headMic/0014.wav,This was easy for us.,3.165,headMic,ok
+F04,Session2,0015,../F04/Session2/wav_headMic/0015.wav,fear,2.345,headMic,ok
+F04,Session2,0016,../F04/Session2/wav_headMic/0016.wav,fear,2.745,headMic,ok
+F04,Session2,0017,../F04/Session2/wav_headMic/0017.wav,sprinkle,2.36,headMic,ok
+F04,Session2,0018,../F04/Session2/wav_headMic/0018.wav,snoop,2.005,headMic,ok
+F04,Session2,0019,../F04/Session2/wav_headMic/0019.wav,I scrubbed the floors thoroughly.,4.445,headMic,ok
+F04,Session2,0020,../F04/Session2/wav_headMic/0020.wav,boot,3.1401,headMic,ok
+F04,Session2,0021,../F04/Session2/wav_headMic/0021.wav,boot,2.16,headMic,ok
+F04,Session2,0022,../F04/Session2/wav_headMic/0022.wav,rocks,1.9,headMic,ok
+F04,Session2,0023,../F04/Session2/wav_headMic/0023.wav,witch,2.06,headMic,ok
+F04,Session2,0024,../F04/Session2/wav_headMic/0024.wav,though,3.53,headMic,ok
+F04,Session2,0026,../F04/Session2/wav_headMic/0026.wav,though,2.18,headMic,ok
+F04,Session2,0027,../F04/Session2/wav_headMic/0027.wav,galore,2.43,headMic,ok
+F04,Session2,0028,../F04/Session2/wav_headMic/0028.wav,I tried to tell people in the community.,4.5701,headMic,ok
+F04,Session2,0029,../F04/Session2/wav_headMic/0029.wav,gnaw,2.99,headMic,ok
+F04,Session2,0030,../F04/Session2/wav_headMic/0030.wav,cycle,1.955,headMic,ok
+F04,Session2,0031,../F04/Session2/wav_headMic/0031.wav,delta,2.775,headMic,ok
+F04,Session2,0032,../F04/Session2/wav_headMic/0032.wav,She is thinner than I am.,4.455,headMic,ok
+F04,Session2,0033,../F04/Session2/wav_headMic/0033.wav,bear,1.985,headMic,ok
+F04,Session2,0034,../F04/Session2/wav_headMic/0034.wav,error,2.82,headMic,ok
+F04,Session2,0035,../F04/Session2/wav_headMic/0035.wav,jungle,2.75,headMic,ok
+F04,Session2,0036,../F04/Session2/wav_headMic/0036.wav,Nothing is as offensive as innocence.,6.69,headMic,ok
+F04,Session2,0037,../F04/Session2/wav_headMic/0037.wav,menu,2.07,headMic,ok
+F04,Session2,0038,../F04/Session2/wav_headMic/0038.wav,peer,2.225,headMic,ok
+F04,Session2,0039,../F04/Session2/wav_headMic/0039.wav,lip,3.535,headMic,ok
+F04,Session2,0040,../F04/Session2/wav_headMic/0040.wav,dot,2.845,headMic,ok
+F04,Session2,0041,../F04/Session2/wav_headMic/0041.wav,We gathered shells on the beach.,4.6101,headMic,ok
+F04,Session2,0042,../F04/Session2/wav_headMic/0042.wav,I feel I can play this weekend.,4.82,headMic,ok
+F04,Session2,0043,../F04/Session2/wav_headMic/0043.wav,tie,2.27,headMic,ok
+F04,Session2,0044,../F04/Session2/wav_headMic/0044.wav,tie,3.125,headMic,ok
+F04,Session2,0045,../F04/Session2/wav_headMic/0045.wav,sigh,2.37,headMic,ok
+F04,Session2,0046,../F04/Session2/wav_headMic/0046.wav,mere,1.95,headMic,ok
+F04,Session2,0047,../F04/Session2/wav_headMic/0047.wav,"Everything went real smooth, the sheriff said.",5.54,headMic,ok
+F04,Session2,0048,../F04/Session2/wav_headMic/0048.wav,pad,2.745,headMic,ok
+F04,Session2,0049,../F04/Session2/wav_headMic/0049.wav,sigh,4.765,headMic,ok
+F04,Session2,0050,../F04/Session2/wav_headMic/0050.wav,sigh,3.765,headMic,ok
+F04,Session2,0051,../F04/Session2/wav_headMic/0051.wav,side,3.12,headMic,ok
+F04,Session2,0052,../F04/Session2/wav_headMic/0052.wav,Their house is grey and white.,4.635,headMic,ok
+F04,Session2,0053,../F04/Session2/wav_headMic/0053.wav,Are your grades higher or lower than Nancy's?,6.44,headMic,ok
+F04,Session2,0054,../F04/Session2/wav_headMic/0054.wav,urgent,3.815,headMic,ok
+F04,Session2,0055,../F04/Session2/wav_headMic/0055.wav,The humidity is overwhelming there.,4.5151,headMic,ok
+F04,Session2,0056,../F04/Session2/wav_headMic/0056.wav,explore,2.82,headMic,ok
+F04,Session2,0057,../F04/Session2/wav_headMic/0057.wav,They carried me off on the stretcher.,5.565,headMic,ok
+F04,Session2,0058,../F04/Session2/wav_headMic/0058.wav,One validated acts of school districts.,6.905,headMic,ok
+F04,Session2,0059,../F04/Session2/wav_headMic/0059.wav,loop,2.19,headMic,ok
+F04,Session2,0060,../F04/Session2/wav_headMic/0060.wav,yes,1.81,headMic,ok
+F04,Session2,0061,../F04/Session2/wav_headMic/0061.wav,floor,2.565,headMic,ok
+F04,Session2,0062,../F04/Session2/wav_headMic/0062.wav,Jane may earn more money by working hard.,6.255,headMic,ok
+F04,Session2,0063,../F04/Session2/wav_headMic/0063.wav,back,1.785,headMic,ok
+F04,Session2,0064,../F04/Session2/wav_headMic/0064.wav,sigh,2.895,headMic,ok
+F04,Session2,0065,../F04/Session2/wav_headMic/0065.wav,write,2.495,headMic,ok
+F04,Session2,0066,../F04/Session2/wav_headMic/0066.wav,write,4.46,headMic,ok
+F04,Session2,0067,../F04/Session2/wav_headMic/0067.wav,four,2.8,headMic,ok
+F04,Session2,0069,../F04/Session2/wav_headMic/0069.wav,fruit,2.4901,headMic,ok
+F04,Session2,0070,../F04/Session2/wav_headMic/0070.wav,witch,2.335,headMic,ok
+F04,Session2,0071,../F04/Session2/wav_headMic/0071.wav,him,2.52,headMic,ok
+F04,Session2,0072,../F04/Session2/wav_headMic/0072.wav,"Night after night, they received annoying phone calls.",6.3251,headMic,ok
+F04,Session2,0073,../F04/Session2/wav_headMic/0073.wav,and,3.545,headMic,ok
+F04,Session2,0074,../F04/Session2/wav_headMic/0074.wav,spark,2.57,headMic,ok
+F04,Session2,0075,../F04/Session2/wav_headMic/0075.wav,hem,2.8,headMic,ok
+F04,Session2,0076,../F04/Session2/wav_headMic/0076.wav,seeds,2.015,headMic,ok
+F04,Session2,0077,../F04/Session2/wav_headMic/0077.wav,sign,2.385,headMic,ok
+F04,Session2,0078,../F04/Session2/wav_headMic/0078.wav,november,2.1,headMic,ok
+F04,Session2,0079,../F04/Session2/wav_headMic/0079.wav,Alfalfa is healthy for you.,4.715,headMic,ok
+F04,Session2,0080,../F04/Session2/wav_headMic/0080.wav,mush,2.185,headMic,ok
+F04,Session2,0081,../F04/Session2/wav_headMic/0081.wav,oscar,2.4001,headMic,ok
+F04,Session2,0082,../F04/Session2/wav_headMic/0082.wav,sell,3.075,headMic,ok
+F04,Session2,0083,../F04/Session2/wav_headMic/0083.wav,The misguided souls have lost their way.,5.25,headMic,ok
+F04,Session2,0084,../F04/Session2/wav_headMic/0084.wav,five,2.35,headMic,ok
+F04,Session2,0085,../F04/Session2/wav_headMic/0085.wav,"If you are losing water, replace it immediately.",4.815,headMic,ok
+F04,Session2,0086,../F04/Session2/wav_headMic/0086.wav,hill,2.135,headMic,ok
+F04,Session2,0087,../F04/Session2/wav_headMic/0087.wav,fitting,1.765,headMic,ok
+F04,Session2,0088,../F04/Session2/wav_headMic/0088.wav,Swing your arm as high as you can.,4.435,headMic,ok
+F04,Session2,0089,../F04/Session2/wav_headMic/0089.wav,pit,1.97,headMic,ok
+F04,Session2,0090,../F04/Session2/wav_headMic/0090.wav,zero,3.365,headMic,ok
+F04,Session2,0091,../F04/Session2/wav_headMic/0091.wav,much,2.93,headMic,ok
+F04,Session2,0092,../F04/Session2/wav_headMic/0092.wav,fat,2.325,headMic,ok
+F04,Session2,0093,../F04/Session2/wav_headMic/0093.wav,thought,3.05,headMic,ok
+F04,Session2,0094,../F04/Session2/wav_headMic/0094.wav,darn,2.62,headMic,ok
+F04,Session2,0095,../F04/Session2/wav_headMic/0095.wav,golf,2.51,headMic,ok
+F04,Session2,0096,../F04/Session2/wav_headMic/0096.wav,I expect we'll bounce back this week.,5.585,headMic,ok
+F04,Session2,0097,../F04/Session2/wav_headMic/0097.wav,spit,3.135,headMic,ok
+F04,Session2,0098,../F04/Session2/wav_headMic/0098.wav,mitten,2.35,headMic,ok
+F04,Session2,0099,../F04/Session2/wav_headMic/0099.wav,dark,4.945,headMic,ok
+F04,Session2,0100,../F04/Session2/wav_headMic/0100.wav,six,3.235,headMic,ok
+F04,Session2,0101,../F04/Session2/wav_headMic/0101.wav,"When all else fails, use force.",5.55,headMic,ok
+F04,Session2,0102,../F04/Session2/wav_headMic/0102.wav,brought,2.455,headMic,ok
+F04,Session2,0103,../F04/Session2/wav_headMic/0103.wav,Alimony harms a divorced man's wealth.,5.86,headMic,ok
+F04,Session2,0104,../F04/Session2/wav_headMic/0104.wav,pit,4.375,headMic,ok
+F04,Session2,0105,../F04/Session2/wav_headMic/0105.wav,hat,3.37,headMic,ok
+F04,Session2,0106,../F04/Session2/wav_headMic/0106.wav,seed,2.935,headMic,ok
+F04,Session2,0107,../F04/Session2/wav_headMic/0107.wav,sergeant,3.185,headMic,ok
+F04,Session2,0108,../F04/Session2/wav_headMic/0108.wav,Carl lives in a lovely home.,4.535,headMic,ok
+F04,Session2,0109,../F04/Session2/wav_headMic/0109.wav,Carl lives in a lively home.,3.84,headMic,ok
+F04,Session2,0110,../F04/Session2/wav_headMic/0110.wav,dart,2.6451,headMic,ok
+F04,Session2,0111,../F04/Session2/wav_headMic/0111.wav,hum,2.755,headMic,ok
+F04,Session2,0112,../F04/Session2/wav_headMic/0112.wav,pitting,2.67,headMic,ok
+F04,Session2,0113,../F04/Session2/wav_headMic/0113.wav,side,2.13,headMic,ok
+F04,Session2,0114,../F04/Session2/wav_headMic/0114.wav,reek,2.175,headMic,ok
+F04,Session2,0115,../F04/Session2/wav_headMic/0115.wav,It also provides for funds to clear slums and help colleges build dormitories.,9.7051,headMic,ok
+F04,Session2,0116,../F04/Session2/wav_headMic/0116.wav,part,2.54,headMic,ok
+F04,Session2,0117,../F04/Session2/wav_headMic/0117.wav,bloat,2.075,headMic,ok
+F04,Session2,0118,../F04/Session2/wav_headMic/0118.wav,It was a good win for us.,4.2,headMic,ok
+F04,Session2,0119,../F04/Session2/wav_headMic/0119.wav,Nothing has been done yet to take advantage of the enabling legislation.,7.24,headMic,ok
+F04,Session2,0120,../F04/Session2/wav_headMic/0120.wav,Aluminum silverware can often be flimsy.,5.35,headMic,ok
+F04,Session2,0121,../F04/Session2/wav_headMic/0121.wav,shy,1.76,headMic,ok
+F04,Session2,0122,../F04/Session2/wav_headMic/0122.wav,lair,3.32,headMic,ok
+F04,Session2,0123,../F04/Session2/wav_headMic/0123.wav,cake,3.07,headMic,ok
+F04,Session2,0124,../F04/Session2/wav_headMic/0124.wav,hitting,2.08,headMic,ok
+F04,Session2,0125,../F04/Session2/wav_headMic/0125.wav,city,2.16,headMic,ok
+F04,Session2,0126,../F04/Session2/wav_headMic/0126.wav,This is a period of transition for me.,4.465,headMic,ok
+F04,Session2,0127,../F04/Session2/wav_headMic/0127.wav,There is a treehouse up above.,4.9701,headMic,ok
+F04,Session2,0128,../F04/Session2/wav_headMic/0128.wav,The dolphins swam around our boat.,5.46,headMic,ok
+F04,Session2,0130,../F04/Session2/wav_headMic/0130.wav,papa,2.56,headMic,ok
+F04,Session2,0131,../F04/Session2/wav_headMic/0131.wav,bran,2.77,headMic,ok
+F04,Session2,0132,../F04/Session2/wav_headMic/0132.wav,brawn,3.3851,headMic,ok
+F04,Session2,0133,../F04/Session2/wav_headMic/0133.wav,pretty,3.515,headMic,ok
+F04,Session2,0134,../F04/Session2/wav_headMic/0134.wav,witty,3.325,headMic,ok
+F04,Session2,0135,../F04/Session2/wav_headMic/0135.wav,tell,3.465,headMic,ok
+F04,Session2,0136,../F04/Session2/wav_headMic/0136.wav,nine,3.515,headMic,ok
+F04,Session2,0137,../F04/Session2/wav_headMic/0137.wav,written,2.215,headMic,ok
+F04,Session2,0138,../F04/Session2/wav_headMic/0138.wav,hotel,5.085,headMic,ok
+F04,Session2,0139,../F04/Session2/wav_headMic/0139.wav,cart,4.5801,headMic,ok
+F04,Session2,0140,../F04/Session2/wav_headMic/0140.wav,The box contained three sweaters.,4.73,headMic,ok
+F04,Session2,0141,../F04/Session2/wav_headMic/0141.wav,bitten,3.48,headMic,ok
+F04,Session2,0142,../F04/Session2/wav_headMic/0142.wav,lick,2.335,headMic,ok
+F04,Session2,0143,../F04/Session2/wav_headMic/0143.wav,This is not a program of socialized medicine.,7.4,headMic,ok
+F04,Session2,0144,../F04/Session2/wav_headMic/0144.wav,This is not a program of socialized medicine.,6.4701,headMic,ok
+F04,Session2,0145,../F04/Session2/wav_headMic/0145.wav,league,2.62,headMic,ok
+F04,Session2,0146,../F04/Session2/wav_headMic/0146.wav,at,2.945,headMic,ok
+F04,Session2,0147,../F04/Session2/wav_headMic/0147.wav,It eventually became a rather proud claim.,6.06,headMic,ok
+F04,Session2,0148,../F04/Session2/wav_headMic/0148.wav,The little schoolhouse stood empty.,5.15,headMic,ok
+F04,Session2,0149,../F04/Session2/wav_headMic/0149.wav,Students watched as he got out.,5.18,headMic,ok
+F04,Session2,0150,../F04/Session2/wav_headMic/0150.wav,take,2.065,headMic,ok
+F04,Session2,0151,../F04/Session2/wav_headMic/0151.wav,kitten,3.485,headMic,ok
+F04,Session2,0152,../F04/Session2/wav_headMic/0152.wav,sitting,3.49,headMic,ok
+F04,Session2,0153,../F04/Session2/wav_headMic/0153.wav,no,3.53,headMic,ok
+F04,Session2,0154,../F04/Session2/wav_headMic/0154.wav,rich,2.62,headMic,ok
+F04,Session2,0155,../F04/Session2/wav_headMic/0155.wav,seven,2.78,headMic,ok
+F04,Session2,0156,../F04/Session2/wav_headMic/0156.wav,leak,2.545,headMic,ok
+F04,Session2,0157,../F04/Session2/wav_headMic/0157.wav,Both injuries were to the same leg.,7.165,headMic,ok
+F04,Session2,0158,../F04/Session2/wav_headMic/0158.wav,hark,2.58,headMic,ok
+F04,Session2,0159,../F04/Session2/wav_headMic/0159.wav,The job provides many benefits.,7.015,headMic,ok
+F04,Session2,0160,../F04/Session2/wav_headMic/0160.wav,him,4.085,headMic,ok
+F04,Session2,0162,../F04/Session2/wav_headMic/0162.wav,The museum hires musicians every evening.,6.61,headMic,ok
+F04,Session2,0163,../F04/Session2/wav_headMic/0163.wav,eight,4.595,headMic,ok
+F04,Session2,0164,../F04/Session2/wav_headMic/0164.wav,echo,2.2551,headMic,ok
+F04,Session2,0166,../F04/Session2/wav_headMic/0166.wav,top,3.57,headMic,ok
+F04,Session2,0167,../F04/Session2/wav_headMic/0167.wav,quebec,2.35,headMic,ok
+F04,Session2,0168,../F04/Session2/wav_headMic/0168.wav,mike,2.245,headMic,ok
+F04,Session2,0169,../F04/Session2/wav_headMic/0169.wav,lima,1.5651,headMic,ok
+F04,Session2,0170,../F04/Session2/wav_headMic/0170.wav,"She wore warm, fleecy, woolen overalls.",7.435,headMic,ok
+F04,Session2,0171,../F04/Session2/wav_headMic/0171.wav,vat,2.87,headMic,ok
+F04,Session2,0172,../F04/Session2/wav_headMic/0172.wav,"Before Thursday's exam, review every formula.",5.865,headMic,ok
+F04,Session2,0173,../F04/Session2/wav_headMic/0173.wav,yes,2.38,headMic,ok
+F04,Session2,0174,../F04/Session2/wav_headMic/0174.wav,blow,2.13,headMic,ok
+F04,Session2,0175,../F04/Session2/wav_headMic/0175.wav,sigh,2.095,headMic,ok
+F04,Session2,0176,../F04/Session2/wav_headMic/0176.wav,I have had my bell rung.,5.63,headMic,ok
+F04,Session2,0177,../F04/Session2/wav_headMic/0177.wav,Day after day some new episode is reported.,8.065,headMic,ok
+F04,Session2,0178,../F04/Session2/wav_headMic/0178.wav,heart,3.405,headMic,ok
+F04,Session2,0179,../F04/Session2/wav_headMic/0179.wav,kilo,2.955,headMic,ok
+F04,Session2,0180,../F04/Session2/wav_headMic/0180.wav,kilo,3.19,headMic,ok
+F04,Session2,0181,../F04/Session2/wav_headMic/0181.wav,knitting,2.585,headMic,ok
+F04,Session2,0182,../F04/Session2/wav_headMic/0182.wav,foxtrot,3.265,headMic,ok
+F04,Session2,0183,../F04/Session2/wav_headMic/0183.wav,He further proposed grants of an unspecified sum for experimental hospitals.,9.95,headMic,ok
+F04,Session2,0184,../F04/Session2/wav_headMic/0184.wav,leak,2.09,headMic,ok
+F04,Session2,0185,../F04/Session2/wav_headMic/0185.wav,spain,2.3,headMic,ok
+F04,Session2,0186,../F04/Session2/wav_headMic/0186.wav,fill,2.765,headMic,ok
+F04,Session2,0187,../F04/Session2/wav_headMic/0187.wav,fat,3.38,headMic,ok
+F04,Session2,0188,../F04/Session2/wav_headMic/0188.wav,fat,2.335,headMic,ok
+F04,Session2,0189,../F04/Session2/wav_headMic/0189.wav,loyal,2.805,headMic,ok
+F04,Session2,0190,../F04/Session2/wav_headMic/0190.wav,barn,2.54,headMic,ok
+F04,Session2,0191,../F04/Session2/wav_headMic/0191.wav,bite,2.725,headMic,ok
+F04,Session2,0192,../F04/Session2/wav_headMic/0192.wav,bit,2.175,headMic,ok
+F04,Session2,0193,../F04/Session2/wav_headMic/0193.wav,A roll of wire lay near the wall.,4.52,headMic,ok
+F04,Session2,0194,../F04/Session2/wav_headMic/0194.wav,thorn,2.865,headMic,ok
+F04,Session2,0195,../F04/Session2/wav_headMic/0195.wav,thorn,1.93,headMic,ok
+F04,Session2,0196,../F04/Session2/wav_headMic/0196.wav,leak,3.185,headMic,ok
+F04,Session2,0197,../F04/Session2/wav_headMic/0197.wav,at,2.34,headMic,ok
+F04,Session2,0198,../F04/Session2/wav_headMic/0198.wav,harm,2.42,headMic,ok
+F04,Session2,0199,../F04/Session2/wav_headMic/0199.wav,harp,2.23,headMic,ok
+F04,Session2,0200,../F04/Session2/wav_headMic/0200.wav,He wrapped the package hastily.,4.65,headMic,ok
+F04,Session2,0201,../F04/Session2/wav_headMic/0201.wav,chop,2.74,headMic,ok
+F04,Session2,0202,../F04/Session2/wav_headMic/0202.wav,start,2.605,headMic,ok
+F04,Session2,0203,../F04/Session2/wav_headMic/0203.wav,We rode horseback to the farm.,3.725,headMic,ok
+F04,Session2,0204,../F04/Session2/wav_headMic/0204.wav,juliet,5.39,headMic,ok
+F04,Session2,0205,../F04/Session2/wav_headMic/0205.wav,park,1.8601,headMic,ok
+F04,Session2,0206,../F04/Session2/wav_headMic/0206.wav,The books are very expensive.,3.88,headMic,ok
+F04,Session2,0207,../F04/Session2/wav_headMic/0207.wav,Did dad do academic bidding?,4.75,headMic,ok
+F04,Session2,0208,../F04/Session2/wav_headMic/0208.wav,A good attitude is unbeatable.,3.235,headMic,ok
+F04,Session2,0209,../F04/Session2/wav_headMic/0209.wav,dread,1.79,headMic,ok
+F04,Session2,0210,../F04/Session2/wav_headMic/0210.wav,shell,1.945,headMic,ok
+F04,Session2,0211,../F04/Session2/wav_headMic/0211.wav,sin,1.87,headMic,ok
+F04,Session2,0212,../F04/Session2/wav_headMic/0212.wav,knot,1.95,headMic,ok
+F04,Session2,0213,../F04/Session2/wav_headMic/0213.wav,ticker,3.82,headMic,ok
+F04,Session2,0214,../F04/Session2/wav_headMic/0214.wav,The prospect of cutting back spending is an unpleasant one for any governor.,7.6501,headMic,ok
+F04,Session2,0215,../F04/Session2/wav_headMic/0215.wav,Each one volunteered to jump first.,4.705,headMic,ok
+F04,Session2,0216,../F04/Session2/wav_headMic/0216.wav,uniform,2.205,headMic,ok
+F04,Session2,0217,../F04/Session2/wav_headMic/0217.wav,The hotel owner shrugged.,3.43,headMic,ok
+F04,Session2,0218,../F04/Session2/wav_headMic/0218.wav,tin,5.135,headMic,ok
+F04,Session2,0219,../F04/Session2/wav_headMic/0219.wav,wicked,1.84,headMic,ok
+F04,Session2,0220,../F04/Session2/wav_headMic/0220.wav,The pair of shoes was new.,4.43,headMic,ok
+F04,Session2,0221,../F04/Session2/wav_headMic/0221.wav,no,2.565,headMic,ok
+F04,Session2,0222,../F04/Session2/wav_headMic/0222.wav,zip,2.95,headMic,ok
+F04,Session2,0223,../F04/Session2/wav_headMic/0223.wav,He really crucified him; he nailed it for a yard loss.,8.2151,headMic,ok
+F04,Session2,0224,../F04/Session2/wav_headMic/0224.wav,sheet,3.38,headMic,ok
+F04,Session2,0225,../F04/Session2/wav_headMic/0225.wav,two,2.745,headMic,ok
+F04,Session2,0226,../F04/Session2/wav_headMic/0226.wav,slicker,2.23,headMic,ok
+F04,Session2,0227,../F04/Session2/wav_headMic/0227.wav,People who value themselves are life's winners.,7.34,headMic,ok
+F04,Session2,0228,../F04/Session2/wav_headMic/0228.wav,The owners regularly look for plumbing leaks.,6.035,headMic,ok
+F04,Session2,0229,../F04/Session2/wav_headMic/0229.wav,nest,2.7,headMic,ok
+F04,Session2,0230,../F04/Session2/wav_headMic/0230.wav,and,3.76,headMic,ok
+F04,Session2,0231,../F04/Session2/wav_headMic/0231.wav,sip,2.295,headMic,ok
+F04,Session2,0232,../F04/Session2/wav_headMic/0232.wav,xray,3.86,headMic,ok
+F04,Session2,0233,../F04/Session2/wav_headMic/0233.wav,lock,3.195,headMic,ok
+F04,Session2,0234,../F04/Session2/wav_headMic/0234.wav,sand,3.0501,headMic,ok
+F04,Session2,0235,../F04/Session2/wav_headMic/0235.wav,him,1.58,headMic,ok
+F04,Session2,0236,../F04/Session2/wav_headMic/0236.wav,him,2.835,headMic,ok
+F04,Session2,0237,../F04/Session2/wav_headMic/0237.wav,bitter,2.4,headMic,ok
+F04,Session2,0238,../F04/Session2/wav_headMic/0238.wav,ham,2.76,headMic,ok
+F04,Session2,0239,../F04/Session2/wav_headMic/0239.wav,knot,2.515,headMic,ok
+F04,Session2,0240,../F04/Session2/wav_headMic/0240.wav,right,2.795,headMic,ok
+F04,Session2,0241,../F04/Session2/wav_headMic/0241.wav,I'm willing to experiment for the first time.,4.25,headMic,ok
+F04,Session2,0242,../F04/Session2/wav_headMic/0242.wav,witch,1.925,headMic,ok
+F04,Session2,0243,../F04/Session2/wav_headMic/0243.wav,"Although always alone, we survive.",7.34,headMic,ok
+F04,Session2,0244,../F04/Session2/wav_headMic/0244.wav,We have an excellent team.,3.82,headMic,ok
+F04,Session2,0245,../F04/Session2/wav_headMic/0245.wav,nut,2.6151,headMic,ok
+F04,Session2,0246,../F04/Session2/wav_headMic/0246.wav,sell,3.195,headMic,ok
+F04,Session2,0247,../F04/Session2/wav_headMic/0247.wav,Please open the window quickly.,4.25,headMic,ok
+F04,Session2,0248,../F04/Session2/wav_headMic/0248.wav,He is definitely a notch above us.,5.0701,headMic,ok
+F04,Session2,0249,../F04/Session2/wav_headMic/0249.wav,sin,2.44,headMic,ok
+F04,Session2,0250,../F04/Session2/wav_headMic/0250.wav,victor,3.045,headMic,ok

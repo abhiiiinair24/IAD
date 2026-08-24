@@ -1,0 +1,11 @@
+=== Dataset Summary ===
+
+Total usable utterances: 2119
+Total usable audio: 2.36 hours
+
+Speaker   Usable    Hours     Skipped   
+M01       381       0.42      5         
+M02       400       0.44      9         
+M03       413       0.34      8         
+M04       413       0.53      12        
+M05       512       0.64      11        
