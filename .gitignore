@@ -27,3 +27,4 @@ checkpoint-*/
 # OS/editor
 .DS_Store
 *.swp
+token.txt
