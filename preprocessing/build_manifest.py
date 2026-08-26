@@ -134,6 +134,18 @@ def process_speaker(speaker_dir: Path, mic: str, rows: list) -> None:
                 })
                 continue
 
+            MIN_DURATION_SEC = 0.1
+            if status == "ok" and 0 < duration < MIN_DURATION_SEC:
+                # Some TORGO clips are only a few milliseconds long (truncated
+                # recordings) -- too short to contain real speech, and known to
+                # cause NaN/exploding-gradient failures during Whisper training.
+                rows.append({
+                    "speaker": speaker, "session": session_dir.name, "utt_id": utt_id,
+                    "wav_path": str(wav_path), "transcript": transcript, "duration_sec": duration,
+                    "mic": session_mic, "status": "skipped_too_short_audio",
+                })
+                continue
+
             rows.append({
                 "speaker": speaker, "session": session_dir.name, "utt_id": utt_id,
                 "wav_path": str(wav_path), "transcript": transcript, "duration_sec": duration,
@@ -181,7 +193,7 @@ def main():
     print(f"  usable (status=ok): {ok}  (~{ok_hours:.2f} hours)")
     for status in ["skipped_noise", "skipped_image_prompt", "skipped_empty_transcript",
                    "skipped_task_instruction", "skipped_missing_audio", "skipped_empty_audio",
-                   "skipped_corrupt_audio"]:
+                   "skipped_corrupt_audio", "skipped_too_short_audio"]:
         n = sum(1 for r in rows if r["status"] == status)
         if n:
             print(f"  {status}: {n}")
