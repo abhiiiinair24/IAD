@@ -1,12 +1,12 @@
 # Raw TORGO speaker data (large audio - re-downloadable from source, not versioned)
-F01/
-F03/
-F04/
-M01/
-M02/
-M03/
-M04/
-M05/
+/F01/
+/F03/
+/F04/
+/M01/
+/M02/
+/M03/
+/M04/
+/M05/
 *.tar.bz2
 
 # Python

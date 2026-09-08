@@ -121,6 +121,10 @@ def main():
     parser = argparse.ArgumentParser(description="Fine-tune Whisper on one LOSO fold.")
     parser.add_argument("--fold-dir", required=True, help="e.g. ../splits/fold_M04")
     parser.add_argument("--model-size", default="medium", choices=["tiny", "base", "small", "medium", "large-v3"])
+    parser.add_argument("--init-from", default=None,
+                         help="Optional: path to an existing local checkpoint (e.g. a LOSO fold's 'final/' dir) "
+                              "to continue fine-tuning from, instead of starting from the pretrained "
+                              "openai/whisper-{model_size} hub model. Used for speaker adaptation.")
     parser.add_argument("--output-dir", required=True)
     parser.add_argument("--num-epochs", type=int, default=10)
     parser.add_argument("--batch-size", type=int, default=4)
@@ -143,7 +147,9 @@ def main():
     print(f"  Val (carved from train speakers, for checkpoint selection only): {len(val_rows)}")
     print(f"  NOTE: {held_out_speaker}'s test.csv is NOT loaded here — it stays untouched until separate evaluation.")
 
-    model_id = f"openai/whisper-{args.model_size}"
+    model_id = args.init_from if args.init_from else f"openai/whisper-{args.model_size}"
+    print(f"Initializing model from: {model_id}"
+          f"{' (continuing from an existing checkpoint)' if args.init_from else ' (fresh pretrained hub model)'}")
     processor = WhisperProcessor.from_pretrained(model_id, language="en", task="transcribe")
     model = WhisperForConditionalGeneration.from_pretrained(model_id)
     model.generation_config.language = "en"
