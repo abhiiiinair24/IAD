@@ -29,3 +29,15 @@ checkpoint-*/
 *.swp
 token.txt
 training_output/
+
+# Generated audio test outputs (reproducible via scripts, not source)
+*.wav
+evaluation/all_speakers_test_outputs_v*/
+pipeline/all_speakers_test_outputs*/
+
+# Trained correction model checkpoint (large, reproducible via train_correction_model.py)
+text_correction/model/
+
+# Editor config / personal notes
+.vscode/
+notes.txt
