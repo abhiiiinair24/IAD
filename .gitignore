@@ -41,3 +41,4 @@ text_correction/model/
 # Editor config / personal notes
 .vscode/
 notes.txt
+evaluation/stranger_baseline_cache.json

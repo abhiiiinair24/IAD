@@ -1,15 +1,15 @@
 """
-app.py - Dysarthric Speech Recognition: About, Technical Details, Held-out
-demo, and the full 3-stage Demo (detect / normalize / synthesize).
+app.py - Dysarthric Speech Recognition: About, Technical Details, and the
+full pipeline Demo (detect / normalize / synthesize / quality metrics).
 
-Four pages:
+Three pages:
   1. About            -- what dysarthria is, why this project exists
   2. Technical Details -- pipeline, models, results (baseline vs fine-tuned chart)
-  3. Held-out demo     -- known TORGO test samples with real, reproducible WER
-  4. Demo              -- upload audio -> noise reduction -> (1) detect text,
+  3. Demo              -- upload audio -> noise reduction -> (1) detect text,
                           (2) normalize/correct it, (3) synthesize the
                           corrected text back in the SAME uploaded speaker's
-                          own cloned voice
+                          own cloned voice, (4) quality metrics (content
+                          fidelity, naturalness, optional voice similarity)
 
 Run:
     streamlit run app.py
@@ -24,6 +24,7 @@ from pathlib import Path
 
 import streamlit as st
 import torch
+import torchaudio
 import numpy as np
 import librosa
 import noisereduce as nr
@@ -54,9 +55,12 @@ from unified_correct import unified_correct
 from phonetic_correct import load_vocab
 from clone_voice import synthesize_with_verification
 from confidence_score import transcribe_with_confidence
+from voice_similarity_general import (
+    embed as ecapa_embed, cosine_similarity, load_classifier as load_ecapa_classifier,
+    build_stranger_baseline, load_stranger_baseline,
+)
 
 MODEL_DIR = BASE_DIR / "training_output" / "whisper-medium" / "all_speakers" / "final"
-TEST_CSV = BASE_DIR / "splits" / "all_speakers" / "test.csv"
 BASELINE_SUMMARY = BASE_DIR / "results" / "baseline_whisper" / "baseline_summary.csv"
 FINETUNED_SUMMARY = BASE_DIR / "results" / "finetuned_whisper_medium" / "finetuned_summary.csv"
 COMPARISON_MD = BASE_DIR / "results" / "comparison_summary.md"
@@ -90,6 +94,70 @@ def load_tts():
     return TTS("tts_models/multilingual/multi-dataset/xtts_v2", gpu=torch.cuda.is_available())
 
 
+@st.cache_resource
+def load_ecapa():
+    return load_ecapa_classifier()
+
+
+@st.cache_resource
+def get_stranger_baseline():
+    classifier = load_ecapa()
+    try:
+        return load_stranger_baseline()
+    except FileNotFoundError:
+        return build_stranger_baseline(classifier)
+
+
+@st.cache_resource
+def load_utmos():
+    return torch.hub.load("tarepan/SpeechMOS:v1.2.0", "utmos22_strong", trust_repo=True)
+
+
+def compute_naturalness(wav_path: str) -> float:
+    predictor = load_utmos()
+    wave, sr = torchaudio.load(wav_path)
+    if wave.shape[0] > 1:
+        wave = wave.mean(dim=0, keepdim=True)
+    return float(predictor(wave, sr))
+
+
+def compute_voice_similarity(generated_path: str, held_out_paths: list[str]) -> dict:
+    """Requires >=2 held-out real clips of the SAME speaker (not used for cloning).
+    Returns a dict with the percentage + CI, or an 'error' key if not computable."""
+    if len(held_out_paths) < 2:
+        return {"error": "Need at least 2 held-out real clips of this speaker to compute this."}
+
+    classifier = load_ecapa()
+    stranger = get_stranger_baseline()
+
+    generated_emb = ecapa_embed(classifier, generated_path)
+    held_out_embs = [ecapa_embed(classifier, p) for p in held_out_paths]
+
+    same_scores = []
+    for i in range(len(held_out_embs)):
+        for j in range(i + 1, len(held_out_embs)):
+            same_scores.append(cosine_similarity(held_out_embs[i], held_out_embs[j]))
+    same_mean = sum(same_scores) / len(same_scores)
+
+    test_scores = [cosine_similarity(generated_emb, e) for e in held_out_embs]
+    test_mean = sum(test_scores) / len(test_scores)
+    test_std = np.std(test_scores)
+
+    span = same_mean - stranger["mean"]
+    if span <= 0:
+        return {"error": "Baseline span was non-positive -- not enough signal to compute a reliable percentage."}
+
+    position = max(0.0, min(1.0, (test_mean - stranger["mean"]) / span))
+    sem = test_std / (len(test_scores) ** 0.5)
+    ci = 1.96 * sem / span * 100
+
+    return {
+        "similarity_pct": position * 100,
+        "ci_pct": ci,
+        "n_held_out": len(held_out_paths),
+    }
+
+
 @st.cache_data
 def load_results_table():
     baseline = {r["speaker"]: r for r in csv.DictReader(open(BASELINE_SUMMARY, newline=""))}
@@ -105,16 +173,6 @@ def load_results_table():
             "Fine-tuned WER (%)": round(float(f["wer"]) * 100, 1) if f else None,
         })
     return pd.DataFrame(data)
-
-
-@st.cache_data
-def load_test_samples():
-    with open(TEST_CSV, newline="") as f:
-        rows = list(csv.DictReader(f))
-    by_speaker = {}
-    for row in rows:
-        by_speaker.setdefault(row["speaker"], []).append(row)
-    return by_speaker
 
 
 def denoise_audio(audio: np.ndarray, sr: int) -> np.ndarray:
@@ -172,16 +230,6 @@ def plot_waveform_comparison(original: np.ndarray, cleaned: np.ndarray, sr: int)
     fig.patch.set_alpha(0)
     st.pyplot(fig, use_container_width=True)
     plt.close(fig)
-
-
-def animate_words(text: str, placeholder, delay: float = 0.18):
-    """Reveals text one word at a time in the given placeholder, typewriter-style."""
-    words = text.split()
-    shown = ""
-    for w in words:
-        shown = (shown + " " + w).strip()
-        placeholder.markdown(f"### {shown}")
-        time.sleep(delay)
 
 
 # ---------------- Page 1: About ----------------
@@ -268,49 +316,7 @@ Levenshtein distance (phonetic correction, non-ML), XTTS-v2 (voice cloning).
             st.markdown(COMPARISON_MD.read_text())
 
 
-# ---------------- Page 3: Held-out demo ----------------
-
-def render_held_out_page(processor, model, device):
-    st.header("Held-out demo (known, reproducible results)")
-    st.caption(
-        "These utterances are from the 20%-per-speaker test split the deployed "
-        "model was NOT trained on -- results here are genuine, reproducible, and "
-        "match the reported 15.83% held-out WER."
-    )
-    by_speaker = load_test_samples()
-
-    speaker = st.selectbox("Speaker", sorted(by_speaker.keys()), key="ho_speaker")
-    samples = by_speaker[speaker]
-    options = [f"{row['utt_id']} — \"{row['transcript'][:40]}\"" for row in samples]
-    choice_idx = st.selectbox("Utterance", range(len(options)), format_func=lambda i: options[i], key="ho_utt")
-    chosen = samples[choice_idx]
-
-    st.audio(chosen["wav_path"])
-    st.write(f"**Reference (ground truth):** {chosen['transcript']}")
-
-    if st.button("Transcribe", type="primary", key="ho_button"):
-        with st.spinner("Running Whisper..."):
-            audio, sr = sf.read(chosen["wav_path"])
-            inputs = processor(audio, sampling_rate=sr, return_tensors="pt").input_features.to(device)
-            with torch.no_grad():
-                predicted_ids = model.generate(inputs, language="en", task="transcribe",
-                                                no_repeat_ngram_size=3, max_new_tokens=100)
-            hypothesis = processor.batch_decode(predicted_ids, skip_special_tokens=True)[0].strip()
-
-        placeholder = st.empty()
-        animate_words(hypothesis, placeholder)
-
-        result = score_batch([chosen["transcript"]], [hypothesis])
-        if result["wer"] is not None:
-            st.metric("WER for this utterance", f"{result['wer']*100:.1f}%")
-        st.caption(
-            "Single-utterance WER is noisy by nature (a 3-word phrase can only "
-            "score 0%, 33%, 67%, or 100%) -- the 15.83% figure is averaged over "
-            "622 held-out utterances, not this one sample."
-        )
-
-
-# ---------------- Page 4: Demo ----------------
+# ---------------- Page 3: Demo ----------------
 
 def prepare_audio(uploaded_bytes: bytes) -> tuple[np.ndarray, str, float]:
     """Loads uploaded audio at 16kHz mono, saves it to a temp file, and
@@ -352,6 +358,17 @@ def render_demo_page(processor, model, device):
         return
 
     st.audio(uploaded)
+
+    with st.expander("Optional: add more clips of the same speaker (enables voice-similarity scoring)"):
+        st.caption(
+            "Voice-similarity scoring needs a few DIFFERENT real recordings of this same speaker, not used "
+            "for cloning, to compare against. Without these, that one metric is skipped -- everything else "
+            "still runs normally."
+        )
+        held_out_files = st.file_uploader(
+            "Additional .wav files of the same speaker (2+)", type=["wav"], accept_multiple_files=True,
+            key="demo_held_out_uploader",
+        )
 
     if st.button("Run pipeline", type="primary"):
         audio_raw, wav_path, duration = prepare_audio(uploaded.getvalue())
@@ -404,23 +421,88 @@ def render_demo_page(processor, model, device):
         if duration > REFERENCE_MAX_S:
             st.caption(f"Your upload is {duration:.1f}s; using the first {REFERENCE_MAX_S:.0f}s as the voice "
                        f"reference (longer references have been found to destabilize voice cloning).")
+
+        attempt_log = st.container()
+        attempt_placeholders = []
+
+        def show_attempt(attempt, max_attempts, message, success):
+            # message already includes "Attempt X/Y: " -- don't prepend it again.
+            placeholder = st.empty()
+            with attempt_log:
+                if success:
+                    placeholder.success(message)
+                else:
+                    placeholder.info(message)
+            attempt_placeholders.append(placeholder)
+
         with st.spinner("Synthesizing voice (first run downloads XTTS-v2, ~2GB)..."):
             tts = load_tts()
             reference_wav = prepare_reference_clip(wav_path, duration)
             output_path = str(Path(tempfile.gettempdir()) / "demo_pipeline_output.wav")
             verified, attempts = synthesize_with_verification(
-                tts, corrected, reference_wav, output_path, str(MODEL_DIR), max_attempts=3
+                tts, corrected, reference_wav, output_path, str(MODEL_DIR), max_attempts=3,
+                on_attempt=show_attempt,
             )
 
         if verified:
-            st.success(f"Synthesized and verified correct (attempt {attempts}/3).")
+            st.success(f"Final result: verified correct on attempt {attempts}/3.")
         else:
-            st.warning("Synthesized, but could not verify the output matches the corrected text "
+            st.warning("Final result: could not verify the output matches the corrected text "
                        "after 3 attempts. Result shown may be imperfect.")
 
         st.audio(output_path)
         with open(output_path, "rb") as f:
             st.download_button("Download .wav", f, file_name="corrected_speech.wav", mime="audio/wav")
+
+        # ---- Stage 4: Quality metrics ----
+        st.subheader("4. Quality metrics")
+        st.caption(
+            "Three independent measurements -- a pipeline can score well on one and poorly on another; "
+            "these are never averaged into a single number."
+        )
+
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            with st.spinner("Scoring content fidelity..."):
+                # XTTS-v2 outputs at 24kHz; Whisper requires exactly 16kHz.
+                roundtrip_audio, roundtrip_sr = librosa.load(output_path, sr=16000, mono=True)
+                roundtrip_16k_path = str(Path(tempfile.gettempdir()) / "demo_roundtrip_16k.wav")
+                sf.write(roundtrip_16k_path, roundtrip_audio, roundtrip_sr)
+                roundtrip_text = transcribe_with_confidence(roundtrip_16k_path, processor, model, device)[0]
+                roundtrip_result = score_batch([corrected], [roundtrip_text])
+                roundtrip_wer = roundtrip_result["wer"] if roundtrip_result["wer"] is not None else 1.0
+            st.metric("Content fidelity", f"{roundtrip_wer*100:.0f}% WER",
+                      delta="Verified" if verified else "Unverified", delta_color="off",
+                      help="Did the synthesized audio say the correct (corrected) words? Re-transcribed and "
+                           "compared back -- 0% WER means an exact match. 'Verified' means this was achieved "
+                           f"within 3 attempts.")
+            st.caption(f"Re-transcription: \"{roundtrip_text}\"")
+        with col2:
+            with st.spinner("Scoring naturalness..."):
+                naturalness = compute_naturalness(output_path)
+            st.metric("Naturalness (UTMOS)", f"{naturalness:.2f} / 5",
+                      help="Automatic speech-quality prediction, correlated with real human quality "
+                           "ratings (~0.84 correlation, VoiceMOS Challenge). No reference audio needed.")
+        with col3:
+            if held_out_files and len(held_out_files) >= 2:
+                with st.spinner("Scoring voice similarity..."):
+                    held_out_paths = []
+                    for f in held_out_files:
+                        tmp = tempfile.NamedTemporaryFile(suffix=".wav", delete=False)
+                        audio_h, sr_h = librosa.load(io.BytesIO(f.getvalue()), sr=16000, mono=True)
+                        sf.write(tmp.name, audio_h, sr_h)
+                        held_out_paths.append(tmp.name)
+                    vs = compute_voice_similarity(output_path, held_out_paths)
+                if "error" in vs:
+                    st.metric("Voice similarity", "N/A")
+                    st.caption(vs["error"])
+                else:
+                    st.metric("Voice similarity", f"{vs['similarity_pct']:.0f}% +/- {vs['ci_pct']:.0f}pp",
+                               help="0% = sounds like a different person; 100% = as similar as this speaker's "
+                                    "own real recordings are to each other. Wider CI with fewer held-out clips.")
+            else:
+                st.metric("Voice similarity", "N/A")
+                st.caption("Upload 2+ additional clips of the same speaker above to enable this.")
 
 
 def main():
@@ -429,13 +511,11 @@ def main():
     with st.spinner("Loading model..."):
         processor, model, device = load_whisper()
 
-    page = st.sidebar.radio("Page", ["About", "Technical Details", "Held-out demo", "Demo"])
+    page = st.sidebar.radio("Page", ["About", "Technical Details", "Demo"])
     if page == "About":
         render_about_page()
     elif page == "Technical Details":
         render_technical_page()
-    elif page == "Held-out demo":
-        render_held_out_page(processor, model, device)
     else:
         render_demo_page(processor, model, device)
 
