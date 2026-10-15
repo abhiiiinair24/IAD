@@ -42,3 +42,6 @@ text_correction/model/
 .vscode/
 notes.txt
 evaluation/stranger_baseline_cache.json
+stutter_data/
+manifests/manifest_stutter*.csv
+results/stutter_*

@@ -27,6 +27,7 @@ import torch
 import torchaudio
 import numpy as np
 import librosa
+import librosa.display
 import noisereduce as nr
 import soundfile as sf
 import pandas as pd
@@ -180,6 +181,35 @@ def denoise_audio(audio: np.ndarray, sr: int) -> np.ndarray:
     return nr.reduce_noise(y=audio, sr=sr)
 
 
+MEL_HOP = 256
+
+
+def mel_db(audio: np.ndarray, sr: int, n_mels: int = 80) -> np.ndarray:
+    """Log-power mel-spectrogram (dB, 80 dB dynamic range)."""
+    S = librosa.feature.melspectrogram(y=audio, sr=sr, n_fft=1024, hop_length=MEL_HOP, n_mels=n_mels,
+                                       fmax=min(8000, sr // 2))
+    return librosa.power_to_db(S, ref=np.max, top_db=80)
+
+
+def plot_mel_panels(panels):
+    """panels: list of (title, audio, sr). Stacked mel-spectrograms on a white background
+    (readable in both light and dark Streamlit themes)."""
+    n = len(panels)
+    fig, axes = plt.subplots(n, 1, figsize=(8, 2.7 * n), constrained_layout=True)
+    axes = np.atleast_1d(axes)
+    img = None
+    for ax, (title, audio, sr) in zip(axes, panels):
+        img = librosa.display.specshow(mel_db(audio, sr), sr=sr, hop_length=MEL_HOP, x_axis="time",
+                                       y_axis="mel", fmax=min(8000, sr // 2), cmap="magma", ax=ax)
+        ax.set_title(title, fontsize=10, loc="left")
+        ax.set_xlabel("Time (s)")
+        ax.set_ylabel("Hz")
+    fig.colorbar(img, ax=list(axes), format="%+2.0f dB", pad=0.01)
+    fig.patch.set_facecolor("white")
+    st.pyplot(fig, use_container_width=True)
+    plt.close(fig)
+
+
 def plot_waveform_comparison(original: np.ndarray, cleaned: np.ndarray, sr: int):
     """Stacked original-vs-cleaned waveforms, sharing a time axis, with the
     region of largest change between the two highlighted so the effect of
@@ -275,7 +305,121 @@ voice-driven technology -- without changing who they sound like.
     st.caption("Repo: [github.com/abhiiiinair24/IAD](https://github.com/abhiiiinair24/IAD)")
 
 
-# ---------------- Page 2: Technical Details ----------------
+# ---------------- Page 2: Glossary ----------------
+
+def render_glossary_page():
+    st.header("Glossary: what the terms mean")
+    st.caption(
+        "Plain-English explanations of the terms used elsewhere in this app -- no technical "
+        "background assumed."
+    )
+
+    with st.expander("**Dysarthria**", expanded=True):
+        st.markdown(
+            "A motor speech disorder -- a condition that affects the muscles used to speak, "
+            "making speech slower, less clear, or harder to control. It's caused by things like "
+            "cerebral palsy, ALS, Parkinson's disease, or stroke. The *words* a person means to "
+            "say are correct in their mind -- the physical act of producing them is what's affected."
+        )
+
+    with st.expander("**WER (Word Error Rate)**"):
+        st.markdown(
+            "A score for how accurately speech was turned into text. It compares the computer's "
+            "guess at what was said against what was *actually* said, and counts the mistakes "
+            "(wrong words, missing words, extra words). **0% is a perfect match; higher numbers "
+            "mean more mistakes.** For example, a WER of 20% roughly means 1 in 5 words was wrong."
+        )
+
+    with st.expander("**Transcription**"):
+        st.markdown(
+            "Converting spoken audio into written text -- what you'd get if someone typed out "
+            "exactly what they heard in a recording."
+        )
+
+    with st.expander("**Text correction / normalization**"):
+        st.markdown(
+            "A step that cleans up likely mistakes in a transcription, to better reflect what the "
+            "speaker actually intended to say. For example, if a transcription came out as "
+            "\"he plays upon our organ\" but the real sentence was \"he plays upon our **small** "
+            "organ,\" this step tries to catch and fix that kind of dropped or wrong word."
+        )
+
+    with st.expander("**Voice cloning**"):
+        st.markdown(
+            "Technology that learns what a specific person's voice sounds like from a sample "
+            "recording, then generates brand-new speech -- saying different words than the "
+            "original recording -- in that same voice. It's generated audio, not a recording of "
+            "the real person saying those words."
+        )
+
+    with st.expander("**Voice similarity**"):
+        st.markdown(
+            "A score for how much a generated (cloned) voice actually sounds like the specific "
+            "real person it's supposed to be imitating -- not just *a* human voice in general, "
+            "but *this* person specifically. It's measured by comparing the generated audio "
+            "against real recordings of that person, and against recordings of other people, to "
+            "see which it resembles more closely. **0% means it sounds like a stranger; 100% "
+            "means it sounds as much like them as their own real recordings sound like each "
+            "other.**"
+        )
+
+    with st.expander("**Naturalness (UTMOS)**"):
+        st.markdown(
+            "A score for how natural and clear a piece of speech sounds overall, regardless of "
+            "whose voice it is or what words are said. It's predicted automatically by a model "
+            "trained on many real human quality ratings, as a stand-in for asking an actual person "
+            "\"does this sound good?\" **Scored 1 (bad/robotic) to 5 (excellent/human-like).**"
+        )
+
+    with st.expander("**Content fidelity**"):
+        st.markdown(
+            "Whether a piece of generated audio actually *says* the words it was supposed to say. "
+            "Checked by transcribing the generated audio back into text and comparing it to the "
+            "intended text -- this is just WER (see above), applied specifically to the generated "
+            "output rather than to the original recording."
+        )
+
+    with st.expander("**Confidence score**"):
+        st.markdown(
+            "A number showing how sure the speech-recognition model was about a specific word it "
+            "transcribed. Low confidence can mean the audio was unclear, mumbled, or ambiguous at "
+            "that point. It is NOT a guarantee of correctness -- a model can be confidently wrong, "
+            "especially when a misheard word is still a real, valid word (e.g. hearing \"know\" as "
+            "\"no\")."
+        )
+
+    with st.expander("**Reference clip / reference audio**"):
+        st.markdown(
+            "The real sample recording of a person's voice that the voice-cloning system listens "
+            "to in order to learn what they sound like, before generating new speech in that voice."
+        )
+
+    with st.expander("**Verified / attempts**"):
+        st.markdown(
+            "Voice generation has some randomness -- the same request can occasionally come out "
+            "wrong or garbled by chance. So the system automatically checks its own output and "
+            "tries again (up to 3 times) if something seems off, before giving you the result. "
+            "\"Verified\" means it passed that check; the attempt number tells you whether it took "
+            "one try or more."
+        )
+
+    with st.expander("**Whisper**"):
+        st.markdown(
+            "The speech-recognition model (originally built by OpenAI) used in this project to "
+            "turn spoken audio into text. It has been specially fine-tuned here on dysarthric "
+            "speech, to recognize it more accurately than an unmodified, general-purpose version "
+            "would."
+        )
+
+    with st.expander("**Fine-tuning**"):
+        st.markdown(
+            "Taking an existing, already-capable model and training it further on a specific kind "
+            "of data -- in this case, dysarthric speech -- so it gets better at that specific task "
+            "without having to be built completely from scratch."
+        )
+
+
+# ---------------- Page 3: Technical Details ----------------
 
 def render_technical_page():
     st.header("Technical Details")
@@ -316,7 +460,7 @@ Levenshtein distance (phonetic correction, non-ML), XTTS-v2 (voice cloning).
             st.markdown(COMPARISON_MD.read_text())
 
 
-# ---------------- Page 3: Demo ----------------
+# ---------------- Page 4: Demo ----------------
 
 def prepare_audio(uploaded_bytes: bytes) -> tuple[np.ndarray, str, float]:
     """Loads uploaded audio at 16kHz mono, saves it to a temp file, and
@@ -370,6 +514,18 @@ def render_demo_page(processor, model, device):
             key="demo_held_out_uploader",
         )
 
+    opt_a, opt_b = st.columns(2)
+    with opt_a:
+        use_denoised = st.checkbox(
+            "Transcribe the noise-reduced audio", value=True,
+            help="Untick to transcribe the original upload instead. Noise reduction can remove quiet or "
+                 "repeated sounds that matter for stuttered speech.")
+    with opt_b:
+        apply_correction = st.checkbox(
+            "Apply text correction", value=True,
+            help="Untick to speak back the detected text as it is. The correction model was trained on short "
+                 "dysarthric prompts and can invent words on long spontaneous sentences.")
+
     if st.button("Run pipeline", type="primary"):
         audio_raw, wav_path, duration = prepare_audio(uploaded.getvalue())
         _, sr = sf.read(wav_path)
@@ -385,16 +541,21 @@ def render_demo_page(processor, model, device):
             st.caption("Original")
             st.audio(audio_raw, sample_rate=sr)
         with col_b:
-            st.caption("Cleaned (used for transcription below)")
+            st.caption("Cleaned (used for transcription below)" if use_denoised else "Cleaned (not used for transcription)")
             st.audio(audio_clean, sample_rate=sr)
-        with st.expander("Waveform: before vs. after"):
-            plot_waveform_comparison(audio_raw, audio_clean, sr)
+        with st.expander("Mel-spectrogram & waveform: before vs. after noise reduction", expanded=True):
+            tab_mel, tab_wave = st.tabs(["Mel-spectrogram", "Waveform"])
+            with tab_mel:
+                plot_mel_panels([("Original (raw upload)", audio_raw, sr),
+                                 ("Cleaned (after noise reduction)", audio_clean, sr)])
+            with tab_wave:
+                plot_waveform_comparison(audio_raw, audio_clean, sr)
 
         # ---- Stage 1: Detect text ----
         st.subheader("1. Detected text")
         with st.spinner("Transcribing..."):
             full_text, word_confidences, overall_conf = transcribe_with_confidence(
-                clean_wav_path, processor, model, device
+                clean_wav_path if use_denoised else wav_path, processor, model, device
             )
         st.write(f"**Transcription:** {full_text}")
         st.write(f"Overall confidence: {overall_conf:.2f}")
@@ -409,10 +570,13 @@ def render_demo_page(processor, model, device):
         # ---- Stage 2: Normalize ----
         st.subheader("2. Normalized text")
         st.caption("What we believe the speaker intended to say, after correcting likely recognition errors.")
-        with st.spinner("Correcting..."):
-            vocab = load_vocab(str(VOCAB_PATH))
-            seq2seq_tokenizer, seq2seq_model = load_correction_model()
-            corrected, method = unified_correct(full_text, vocab, seq2seq_tokenizer, seq2seq_model)
+        if apply_correction:
+            with st.spinner("Correcting..."):
+                vocab = load_vocab(str(VOCAB_PATH))
+                seq2seq_tokenizer, seq2seq_model = load_correction_model()
+                corrected, method = unified_correct(full_text, vocab, seq2seq_tokenizer, seq2seq_model)
+        else:
+            corrected, method = full_text, "skipped (text correction turned off)"
         st.write(f"**Normalized text:** {corrected}")
         st.caption(f"Correction method used: {method}")
 
@@ -453,6 +617,11 @@ def render_demo_page(processor, model, device):
         st.audio(output_path)
         with open(output_path, "rb") as f:
             st.download_button("Download .wav", f, file_name="corrected_speech.wav", mime="audio/wav")
+
+        with st.expander("Mel-spectrogram: your input vs. the generated speech", expanded=True):
+            gen_audio, gen_sr = librosa.load(output_path, sr=16000, mono=True)
+            plot_mel_panels([("Input (dysarthric speech)", audio_raw, sr),
+                             ("Generated (corrected text, cloned voice)", gen_audio, gen_sr)])
 
         # ---- Stage 4: Quality metrics ----
         st.subheader("4. Quality metrics")
@@ -511,9 +680,11 @@ def main():
     with st.spinner("Loading model..."):
         processor, model, device = load_whisper()
 
-    page = st.sidebar.radio("Page", ["About", "Technical Details", "Demo"])
+    page = st.sidebar.radio("Page", ["About", "Glossary", "Technical Details", "Demo"])
     if page == "About":
         render_about_page()
+    elif page == "Glossary":
+        render_glossary_page()
     elif page == "Technical Details":
         render_technical_page()
     else:
